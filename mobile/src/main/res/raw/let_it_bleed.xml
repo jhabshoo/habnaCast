@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<album>
+
+    <name>Let It Bleed</name>
+    <artist>The Rolling Stones</artist>
+    <year>1969</year>
+
+    <song>
+        <name>Gimme Shelter</name>
+    </song>
+    <song>
+        <name>Love in Vain</name>
+    </song>
+    <song>
+        <name>Country Honk</name>
+    </song>
+    <song>
+        <name>Live with Me</name>
+    </song>
+    <song>
+        <name>Let It Bleed</name>
+    </song>
+    <song>
+        <name>Midnight Rambler</name>
+    </song>
+    <song>
+        <name>You Got the Silver</name>
+    </song>
+    <song>
+        <name>Monkey Man</name>
+    </song>
+    <song>
+        <name>You Can't Always Get What You Want</name>
+    </song>
+</album>
