@@ -4,13 +4,26 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import dev.habna.habnacast.Models.Album;
+import dev.habna.habnacast.Models.Song;
 
 public class SongsActivity extends ListActivity {
+
+    private Album album = null;
+    private final String TAG = "SongsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
+        album = (Album)getIntent().getSerializableExtra("album");
+        loadSongs();
     }
 
 
@@ -28,5 +41,15 @@ public class SongsActivity extends ListActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         return (id == R.id.action_settings ? true : super.onOptionsItemSelected(item));
+    }
+
+    private void loadSongs()    {
+        ListView listView = getListView();
+        List<String> songNames = new ArrayList<String>();
+        for (Song song : album.getSongs())  {
+            songNames.add(song.getName());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_row, songNames);
+        listView.setAdapter(adapter);
     }
 }

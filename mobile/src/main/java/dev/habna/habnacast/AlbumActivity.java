@@ -1,12 +1,14 @@
 package dev.habna.habnacast;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -60,13 +62,24 @@ public class AlbumActivity extends ListActivity {
     }
 
     private void loadMusic()  throws XmlPullParserException, IOException  {
-        Album album = new Album();
+        Album lib = new Album();
+        Album aye = new Album();
         try {
             Util.log(TAG, "Loading Music");
             is = getResources().openRawResource(R.raw.let_it_bleed);
-            album.parse(is);
+            lib.parse(is);
             Util.log(TAG, "Finished parsing album file.");
-            albums.add(album);
+            albums.add(lib);
+            is = getResources().openRawResource(R.raw.are_you_experienced);
+            aye.parse(is);
+            Util.log(TAG, "Finished parsing album file.");
+            albums.add(aye);
+
+
+
+
+
+
             List<String> albumNames = new ArrayList<String>();
             for (Album a :  albums)    {
                 albumNames.add(a.getName());
@@ -84,6 +97,19 @@ public class AlbumActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        
+        String albumName = ((TextView) v).getText().toString();
+        Intent intent = new Intent(this, SongsActivity.class);
+        Album album = getAlbum(albumName);
+        intent.putExtra("album", album);
+        startActivity(intent);
+    }
+
+    Album getAlbum(String name) {
+        for (Album album : albums)  {
+            if (name.equals(album.getName()))   {
+                return album;
+            }
+        }
+        return null;
     }
 }

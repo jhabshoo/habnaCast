@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<album>
+
+    <name>Are You Experienced</name>
+    <artist>Jimi Hendrix Experience</artist>
+    <year>1967</year>
+
+    <song>
+        <name>Purple Haze</name>
+    </song>
+    <song>
+        <name>Manic Depression</name>
+    </song>
+    <song>
+        <name>Hey Joe</name>
+    </song>
+    <song>
+        <name>Red House</name>
+    </song>
+    <song>
+        <name>Love or Confusion</name>
+    </song>
+    <song>
+        <name>May This Be Love</name>
+    </song>
+    <song>
+        <name>I Don't Live Today</name>
+    </song>
+    <song>
+        <name>The Wind Cries Mary</name>
+    </song>
+    <song>
+        <name>Fire</name>
+    </song>
+    <song>
+        <name>Third Stone from the Sun</name>
+    </song>
+    <song>
+        <name>Remember</name>
+    </song>
+    <song>
+        <name>Can You See Me</name>
+    </song>
+    <song>
+        <name>Foxy Lady</name>
+    </song>
+    <song>
+        <name>Are You Experienced?</name>
+    </song>
+</album>

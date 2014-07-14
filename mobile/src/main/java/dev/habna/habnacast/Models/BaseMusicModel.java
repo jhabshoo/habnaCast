@@ -1,11 +1,13 @@
 package dev.habna.habnacast.Models;
 
+import java.io.Serializable;
+
 import dev.habna.habnacast.Utilities.Util;
 
 /**
  * Created by jhabshoosh on 7/8/14.
  */
-public abstract class BaseMusicModel extends BaseModel implements BaseMusicInterface    {
+public abstract class BaseMusicModel extends BaseModel implements BaseMusicInterface, Serializable {
 
     String artist;
     int year;
